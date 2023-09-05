@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script reads a list of words from standard input and prints only words that appear exactly once.
+
+sort | uniq -c | awk '$1 == 1 {print $2}'
+
