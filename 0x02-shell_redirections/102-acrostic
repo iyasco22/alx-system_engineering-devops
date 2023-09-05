@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script decodes acrostics that use the first letter of each line.
+
+awk '{ printf "%s", substr($0, 1, 1) } END { print "" }'
+
