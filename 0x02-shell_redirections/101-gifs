@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script finds all .gif files in the current directory and all sub-directories and lists them without their extensions.
+
+find . -type f -name "*.gif" | sort -f | cut -d'/' -f 2- | rev | cut -d'.' -f 2- | rev
+
