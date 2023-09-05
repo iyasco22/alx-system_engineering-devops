@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script displays all users and their home directories, sorted by users
+
+awk -F: '{print $1":"$6}' /etc/passwd | sort
+
