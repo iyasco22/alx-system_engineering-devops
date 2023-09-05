@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script displays all lines from the file /etc/ssh/sshd_config that start with a letter
+
+grep "^[A-Za-z]" /etc/ssh/sshd_config
+
