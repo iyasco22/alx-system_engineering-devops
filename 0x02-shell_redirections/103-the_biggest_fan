@@ -1,0 +1,15 @@
+#!/bin/bash
+# This script displays the 11 hosts or IP addresses which did the most requests.
+
+# Process the file, count the occurrences of each host/IP
+awk 'NR > 1 {freq[$1]++} END {for (host in freq) print freq[host], host}' | 
+
+# Sort by number of occurrences, in reverse
+sort -nr |
+
+# Extract the top 11 hosts
+head -n 11 |
+
+# Display only the host names
+awk '{print $2}'
+
