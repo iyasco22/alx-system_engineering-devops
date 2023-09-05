@@ -1,0 +1,6 @@
+#!/bin/bash
+# This script finds all empty files and directories in the current directory and all sub-directories.
+
+find . -type f -empty -exec basename {} \; 
+find . -type d -empty -exec basename {} \;
+
