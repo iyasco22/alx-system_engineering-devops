@@ -1,0 +1,5 @@
+#!/bin/bash
+cat /etc/passwd
+echo "" # This adds an extra newline for better readability between the files.
+cat /etc/hosts
+
