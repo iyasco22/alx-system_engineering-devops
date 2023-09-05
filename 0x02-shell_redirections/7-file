@@ -1,0 +1,15 @@
+#!/bin/bash
+# Creates a file with a special name and specific content
+
+filename='*\\"'"'""'Best School'"'""'\\*$?*****:)'
+
+# Create the file with the desired content
+echo "Best School" > "$filename"
+
+
+
+
+
+
+
+
