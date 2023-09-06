@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Define the custom bases
+base_water="water"
+base_stir="stir"
+base_bestchol="bestchol"
+
+# Convert a number from a custom base to base 10
+to_base10() {
+    local num="$1"
+    local base="$2"
+    local result=0
+    local power=1
+
+    for (( i=${#num}-1; i>=0; i-- )); do
+        digit="${num:$i:1}"
+        value=$(expr index "$base" "$digit" - 1)
+        result=$((result + value*power))
+        power=$((power*${#base}))
+    done
+
+    echo $result
+}
+
+# Convert a number from base 10 to a custom base
+from_base10() {
+    local num="$1"
+    local base="$2"
+    local result=""
+
+    while [ $num -gt 0 ]; do
+        value=$((num % ${#base}))
+        result="${base:$value:1}$result"
+        num=$((num / ${#base}))
+    done
+
+    [ -z "$result" ] && result="0"
+    echo $result
+}
+
+# Convert WATER and STIR to base 10 and add
+sum=$(( $(to_base10 "$WATER" "$base_water") + $(to_base10 "$STIR" "$base_stir") ))
+
+# Convert the sum to base "bestchol" and print
+echo $(from_base10 $sum "$base_bestchol")
+
