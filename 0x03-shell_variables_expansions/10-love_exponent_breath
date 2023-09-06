@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check if BREATH and LOVE are set and not empty
+if [[ -z "$BREATH" || -z "$LOVE" ]]; then
+    echo "Error: BREATH or LOVE is not set."
+    exit 1
+fi
+
+echo $(( $BREATH ** $LOVE ))
+
