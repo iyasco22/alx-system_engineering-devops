@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check if BINARY is set and not empty
+if [[ -z "$BINARY" ]]; then
+    echo "Error: BINARY is not set."
+    exit 1
+fi
+
+echo $((2#$BINARY))
+
