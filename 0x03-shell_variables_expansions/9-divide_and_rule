@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Check if POWER and DIVIDE are set and not empty
+if [[ -z "$POWER" || -z "$DIVIDE" ]]; then
+    echo "Error: POWER or DIVIDE is not set."
+    exit 1
+fi
+
+# Check if DIVIDE is zero
+if [[ $DIVIDE -eq 0 ]]; then
+    echo "Error: Division by zero."
+    exit 2
+fi
+
+echo $(( $POWER / $DIVIDE ))
+
